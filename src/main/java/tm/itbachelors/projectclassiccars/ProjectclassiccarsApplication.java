@@ -1,3 +1,7 @@
+// Name: Lander Smits
+// Class: 1ITF05
+// Student-number: r1093338
+
 package tm.itbachelors.projectclassiccars;
 
 import org.springframework.boot.SpringApplication;
