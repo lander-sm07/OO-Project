@@ -9,7 +9,7 @@ import java.util.ArrayList;
 public class Owner extends Person {
     private int yearOfBirth;
     private String carCode;
-    private ArrayList<String> wishList = new ArrayList<> ();;
+    private ArrayList<String> wishList = new ArrayList<> ();
 
     public Owner(String firstName, String surName) {
         super(firstName, surName);
@@ -52,7 +52,7 @@ public class Owner extends Person {
     }
 
     public String toString() {
-        return "Owner " + super.toString() + " (BE) with car code " + getCarCode();
+        return "Owner " + super.toString() + " (" + getNationality() + ") with car code " + getCarCode();
     }
 
 }
