@@ -52,7 +52,7 @@ public class Owner extends Person {
     }
 
     public String toString() {
-        return "Owner " + super.toString() + " (" + getNationality() + ") with car code " + getCarCode();
+        return "Owner " + super.toString() + " with car code " + getCarCode();
     }
 
 }
