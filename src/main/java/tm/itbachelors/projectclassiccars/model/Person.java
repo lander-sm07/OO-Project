@@ -41,7 +41,6 @@ public class Person {
         this.nationality = nationality;
     }
 
-    // Customs
     public String toString(){
         return surName.toUpperCase() + " " + firstName;
     }

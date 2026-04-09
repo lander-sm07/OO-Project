@@ -32,7 +32,6 @@ public class Staff extends Person {
         this.senior = senior;
     }
 
-    //Custom Methods
     public String toString() {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         String formattedDate = startDate.format(formatter);

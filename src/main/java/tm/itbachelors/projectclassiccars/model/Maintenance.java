@@ -54,7 +54,6 @@ public class Maintenance {
         this.responsible = responsible;
     }
 
-    // Custom Methods
     public double getPrice() {
         return hourlyRate * duration / 60;
     }

@@ -53,8 +53,6 @@ public class Car {
         this.photo = photo;
     }
 
-    // Custom Methods
-
     public String getName() {
         return brand + " - " + type;
     }

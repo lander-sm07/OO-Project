@@ -36,7 +36,6 @@ public class Owner extends Person {
         this.carCode = carCode;
     }
 
-    //Custom Methods
     public boolean addToWishList(String carName) {
         if (wishList.size() < 5){
             wishList.add(carName);
