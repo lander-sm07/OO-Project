@@ -151,15 +151,12 @@ public class ProjectclassiccarsApplication {
 			System.out.println();
 		}
 
-
-
-
-
-
-
-
 	System.out.println("\n-- PART 4 --");
-	// Write your code part 4 here
+	for (Owner owner: ownerList) {
+		if (owner.getFirstName().equals("Lander") && owner.getSurName().equals("Smits")) {
+			System.out.println(owner);
+		}
+	}
 
 	System.out.println("\nThe end ...");
         System.exit(0);
