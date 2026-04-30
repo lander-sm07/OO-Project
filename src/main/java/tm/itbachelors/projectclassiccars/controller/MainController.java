@@ -3,6 +3,8 @@ package tm.itbachelors.projectclassiccars.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import tm.itbachelors.projectclassiccars.model.Owner;
+import tm.itbachelors.projectclassiccars.model.Staff;
 
 import javax.annotation.PostConstruct;
 import javax.servlet.http.HttpServletRequest;
@@ -16,9 +18,58 @@ public class MainController {
 //    private ArrayList<Owner> ownerArrayList;
 //    private ArrayList<Car> carArrayList;
 
-    @RequestMapping("/index")
+    @RequestMapping("/")
     public String index() {
         return "index";
+    }
+
+    @RequestMapping("/newowner")
+    public String newOwner() {
+        return "1_owner";
+    }
+
+    @RequestMapping("/newstaff")
+    public String newStaff() {
+        return "3_staff";
+    }
+
+    @RequestMapping("/submitOwner")
+    public String submitOwner(HttpServletRequest request, Model model) {
+
+        String first = request.getParameter("firstName");
+        String last = request.getParameter("surname");
+        int year = Integer.parseInt(request.getParameter("year"));
+
+        Owner owner = new Owner(first, last);
+        owner.setYearOfBirth(year);
+
+        model.addAttribute("owner", owner);
+
+        return "2_owner";
+    }
+
+    @RequestMapping("/submitStaff")
+    public String submitStaff(HttpServletRequest request, Model model) {
+
+        String first = request.getParameter("firstName");
+        String last = request.getParameter("surname");
+
+        // parse date from form
+        LocalDate date = LocalDate.parse(request.getParameter("startDate"));
+
+        // checkbox logic
+        boolean senior = request.getParameter("senior") != null;
+
+        // create object
+        Staff staff = new Staff(first, last);
+
+        // set extra fields
+        staff.setStartDate(date);
+        staff.setSenior(senior);
+
+        model.addAttribute("staff", staff);
+
+        return "4_staff";
     }
 
 

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Owner</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+
+<h1>Create new owner</h1>
+
+<form action="/submitOwner">
+
+    First name:
+    <input type="text" name="firstName"><br>
+
+    Surname:
+    <input type="text" name="surname"><br>
+
+    Year of birth:
+    <input type="number" name="year"><br>
+
+    <button type="submit">Continue without car code</button>
+</form>
+
+<br>
+<a href="/">Back to home page</a>
+
+</body>
+</html>

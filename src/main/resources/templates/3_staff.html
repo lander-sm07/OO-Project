@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>New Staff</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+</head>
+<body>
+
+<h1>Create new staff member</h1>
+
+<form action="/submitStaff">
+
+    First name:
+    <input type="text" name="firstName"><br>
+
+    Surname:
+    <input type="text" name="surname"><br>
+
+    Start date (dd-mm-yyyy):
+    <input type="date" name="startDate"><br>
+
+    Senior:
+    <input type="checkbox" name="senior"><br>
+
+    <button type="submit">Create staff member</button>
+</form>
+
+<a href="/">Back to home page</a>
+
+</body>
+</html>

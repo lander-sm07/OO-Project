@@ -159,7 +159,7 @@ public class ProjectclassiccarsApplication {
 	}
 
 	System.out.println("\nThe end ...");
-        System.exit(0);
+//        System.exit(0);
 
     }
 
