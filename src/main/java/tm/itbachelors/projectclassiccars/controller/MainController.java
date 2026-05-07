@@ -40,6 +40,7 @@ public class MainController {
     @RequestMapping("/submitOwner")
     public String submitOwner(HttpServletRequest request, Model model) {
 
+        // Gets info from 1_owner.html
         String first = request.getParameter("firstName");
         String last = request.getParameter("surname");
         int year = Integer.parseInt(request.getParameter("year"));
@@ -55,19 +56,20 @@ public class MainController {
     @RequestMapping("/submitStaff")
     public String submitStaff(HttpServletRequest request, Model model) {
 
+        // Gets info from 3_staff.html
         String first = request.getParameter("firstName");
         String last = request.getParameter("surname");
 
-        // parse date from form
+        // Parses date from form
         LocalDate date = LocalDate.parse(request.getParameter("startDate"));
 
-        // checkbox logic
+        // Checkbox logic
         boolean senior = request.getParameter("senior") != null;
 
-        // create object
+        // Create object
         Staff staff = new Staff(first, last);
 
-        // set extra fields
+        // Set extra fields
         staff.setStartDate(date);
         staff.setSenior(senior);
 
