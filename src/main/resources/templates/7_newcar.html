@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>New Car</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Create New Car</h1>
+    <form action="/submitCar">
+        Brand:
+        <input type="text" name="brand">
+        <br><br>
+        Type:
+        <input type="text" name="type">
+        <br><br>
+        Kilometers:
+        <input type="number"
+               name="kilometers"
+               min="0"
+               max="200000"
+               step="1"
+               value="0">
+        <br><br>
+        <button type="submit">Create car</button>
+    </form>
+
+    <br>
+
+    <a class="menu-button" href="/">Back to home</a>
+
+</div>
+
+</body>
+</html>

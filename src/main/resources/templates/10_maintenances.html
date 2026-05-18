@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Maintenances</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1 th:text="${car.getName()}"></h1>
+    <img onerror="this.src='/img/noimage.jpg'"
+         th:src="@{${car.getPhoto()}}"
+         width="400">
+    <br><br>
+    <h2>Maintenances</h2>
+    <ul>
+        <li th:each="maintenance : ${car.getMaintenances()}">
+            <strong th:text="${maintenance.getType()}"></strong>
+            <br>
+            Duration:
+            <span th:text="${maintenance.getDuration()}"></span>
+            minutes
+            <br>
+            Hourly rate:
+            <span th:text="${maintenance.getHourlyRate()}"></span>
+            <br>
+            Responsible:
+            <span th:text="${maintenance.getResponsible()}"></span>
+            <br><br>
+        </li>
+    </ul>
+
+    <a class="menu-button" href="/">
+        Back to home
+    </a>
+
+</div>
+
+</body>
+</html>

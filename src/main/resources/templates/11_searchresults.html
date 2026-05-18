@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <title>Search Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="card">
+
+    <h1>Search Results</h1>
+    <div th:if="${matchingCars.size() > 0}">
+        <p>
+            Maintenance type:
+            <strong th:text="${type}"></strong>
+        </p>
+        <p>
+            Found in these cars:
+        </p>
+        <ul>
+            <li th:each="car : ${matchingCars}"
+                th:text="${car.getName()}">
+            </li>
+        </ul>
+    </div>
+    <div th:if="${matchingCars.size() == 0}">
+        <p>
+            No maintenance of type
+            <strong th:text="${type}"></strong>
+            was found.
+        </p>
+    </div>
+
+    <a class="menu-button" href="/">Back to home</a>
+
+</div>
+
+</body>
+</html>

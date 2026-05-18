@@ -13,6 +13,8 @@ Student-number: r1093338
 </head>
 <body>
 
+<div class="card">
+
 <h1>Create new owner</h1>
 
 <form action="/submitOwner">
@@ -26,11 +28,23 @@ Student-number: r1093338
     Year of birth:
     <input type="number" name="year"><br>
 
-    <button type="submit">Continue without car code</button>
+    Choose car:
+    <select name="carIndex">
+        <option value="-1">Select a car</option>
+        <option th:each="car, carStat : ${carList}"
+                th:value="${carStat.index}"
+                th:text="${car.name}">
+        </option>
+    </select>
+    <br><br>
+
+    <button type="submit">Create owner</button>
 </form>
 
 <br>
 <a href="/">Back to home page</a>
+
+</div>
 
 </body>
 </html>

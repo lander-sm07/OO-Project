@@ -1,25 +1,23 @@
-<!--
-Name: Lander Smits
-Class: 1ITF05
-Student-number: r1093338
--->
-
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
+
 <head>
-    <title>Owner info</title>
+    <title>Error</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/water.css@2/out/water.css">
     <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
+
 <body>
 
 <div class="card">
-
-<h1>
-    Welcome <span th:text="${owner}"></span>
-</h1>
-
-<a href="/">Back to home page</a>
+    <h1>Error</h1>
+    <h2 th:text="${errormessage}">
+        Something went wrong.
+    </h2>
+    <br>
+    <a class="menu-button" href="/">
+        Back to home
+    </a>
 
 </div>
 
