@@ -71,11 +71,11 @@ public class Car {
 
     public Maintenance searchMaintenanceByType(String type) {
         for (Maintenance maintenance : maintenances) {
-            if(maintenance.getType().equals(type)) { // checks if 2 objects have same value
-                return maintenance; // once a match is found it returns it immediately
+            if(maintenance.getType().equals(type)) {
+                return maintenance;
             }
         }
-        return null; // return null if nothing was found
+        return null;
     }
 
     public void registerOwner(Owner owner) {

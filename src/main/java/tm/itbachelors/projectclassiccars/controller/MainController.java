@@ -46,7 +46,7 @@ public class MainController {
         return "7_newcar";
     }
 
-    @GetMapping("/newmaintenance")
+    @RequestMapping("/newmaintenance")
     public String newMaintenance(Model model) {
 
         model.addAttribute("carList", carArrayList);
@@ -83,16 +83,12 @@ public class MainController {
         String first = request.getParameter("firstName");
         String last = request.getParameter("surname");
 
-        // Parses date from form
         LocalDate date = LocalDate.parse(request.getParameter("startDate"));
 
-        // Checkbox logic
         boolean senior = request.getParameter("senior") != null;
 
-        // Create object
         Staff staff = new Staff(first, last);
 
-        // Set extra fields
         staff.setStartDate(date);
         staff.setSenior(senior);
         staffArrayList.add(staff);
@@ -108,8 +104,7 @@ public class MainController {
         String brand = request.getParameter("brand");
         String type = request.getParameter("type");
 
-        int kilometers =
-                Integer.parseInt(request.getParameter("kilometers"));
+        int kilometers = Integer.parseInt(request.getParameter("kilometers"));
 
         Car car = new Car(brand, type);
 
@@ -123,8 +118,7 @@ public class MainController {
     }
 
     @RequestMapping("/submitMaintenance")
-    public String submitMaintenance(HttpServletRequest request,
-                                    Model model) {
+    public String submitMaintenance(HttpServletRequest request, Model model) {
 
         String type = request.getParameter("type");
 
@@ -134,10 +128,7 @@ public class MainController {
         int staffIndex = Integer.parseInt(request.getParameter("staffIndex"));
 
         if (carIndex == -1 || staffIndex == -1) {
-            model.addAttribute(
-                    "errormessage",
-                    "You must select a car and a staff member!"
-            );
+            model.addAttribute("errormessage", "You must select a car and a staff member!");
             return "error";
         }
 
@@ -161,34 +152,27 @@ public class MainController {
         staffArrayList = fillStaffMembers();
         ownerArrayList = fillOwners();
         carArrayList = fillCars();
-
     }
 
-    @GetMapping("/stafflist")
+    @RequestMapping("/stafflist")
     public String showStaff(Model model) {
-
         model.addAttribute("staffList", staffArrayList);
-
         return "5_stafflist";
     }
 
-    @GetMapping("/ownerlist")
+    @RequestMapping("/ownerlist")
     public String showOwners(Model model) {
-
         model.addAttribute("ownerList", ownerArrayList);
-
         return "6_ownerlist";
     }
 
-    @GetMapping("/carlist")
+    @RequestMapping("/carlist")
     public String showCars(Model model) {
-
         model.addAttribute("carList", carArrayList);
-
         return "8_carlist";
     }
 
-    @GetMapping("/cardetails")
+    @RequestMapping("/cardetails")
     public String carDetails(HttpServletRequest request, Model model) {
         int carIndex = Integer.parseInt(request.getParameter("carIndex"));
         Car selectedCar = carArrayList.get(carIndex);
@@ -198,7 +182,7 @@ public class MainController {
         return "10_maintenances";
     }
 
-    @GetMapping("/searchmaintenance")
+    @RequestMapping("/searchmaintenance")
     public String searchMaintenance(HttpServletRequest request, Model model) {
         String type = request.getParameter("type");
         ArrayList<Car> matchingCars = new ArrayList<>();
